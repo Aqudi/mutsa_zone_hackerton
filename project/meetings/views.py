@@ -49,7 +49,7 @@ def join(request, id):
         meeting_category = meeting.category
         meeting_title = meeting.title
         meeting_writer = meeting.writer
-        participant = Participant(name = name, email = email, school = school, motive = motive, meeting_category = meeting_category, meeting_title = meeting_title, meeting_writer = meeting_writer,)
+        participant = Participant(name=name, email=email, school=school, motive=motive, meeting_category=meeting_category, meeting_title=meeting_title, meeting_writer=meeting_writer, meeting=meeting)
         participant.save()
         
         # participant.meetings.add(meeting)
@@ -147,7 +147,7 @@ def check_pwd(request):
     
     if pwd == meeting.password:
         if request.POST.get('action') == "edit":
-            return redirect('edit', id)
+            return redirect('meetings:edit', id)
         
         else:
             return redirect('meetings:delete', id)

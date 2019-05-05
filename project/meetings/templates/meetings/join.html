@@ -6,6 +6,7 @@
     <h1>모임 참여</h1>
     <table class="table table-striped row-head-htj">
         <form action="{% url 'meetings:join' meeting.id %}" method="POST">
+            {% csrf_token %}
         <tbody>
             <tr>
                 <th>모임제목 : </th>
@@ -43,10 +44,11 @@
             <td></td>
             <th></th>
             <div class="col-12">
-                <td>
-                    <button type="submit">참석요청</button>
-                    <button type="button">
-                        <a href="{% url 'meetings:list' %}">취소</a>
+                <td style="align-contents:right">
+                    <button class="btn btn btn-outline-secondary" type="submit">참석요청</button>
+                    <button class="btn btn btn-outline-secondary" type="button">
+                        <a style="text-decoration:none; color:black" 
+                        href="{% url 'meetings:list' %}">취소</a>
                     </button>
                 </td>
             </div>

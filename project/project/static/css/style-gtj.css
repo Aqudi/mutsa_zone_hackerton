@@ -68,7 +68,21 @@
     font-weight:normal;
     font-size:50px;
     color:white;
+    display:inline-block;
     
+}
+#service-name-z-gtj{
+    color:orange;
+    margin-bottom:50px;
+    font-family: inherit;
+    font-weight:normal;
+    font-size:50px;
+    display:inline-block;
+    
+}
+#likelionzone-gtj{
+    margin:0 auto;
+    text-align:center;
 }
 #hr-gtj{
     color: white;    

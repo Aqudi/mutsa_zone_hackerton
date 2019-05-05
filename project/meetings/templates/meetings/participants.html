@@ -7,7 +7,7 @@
         <h3 class="sub-content-name-htj col-12">현재 개설되어 있는 모임 목록입니다.</h3>
     </div>
     <br>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-htj">
         <thead>
             <tr class="tr-list-htj">
                 <th width="12%">글번호</th>
@@ -21,6 +21,7 @@
         <tbody>
         <!--django 데이터--->
         {% for meeting in meetings %}
+        {% if participant in participants
         <tr>
             <td>{{ meeting.id }}</td>
             <td>{{ meeting.category }}</td>
