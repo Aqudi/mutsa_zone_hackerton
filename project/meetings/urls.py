@@ -11,9 +11,10 @@ urlpatterns = [
     # path('update/<int:id>/', views.update, name="update"),
     # path('search_result/', views.search_result, name="search_result"),
     path('', views.search, name ="search"),
-    # path('join_page/<int:id>/', views.join_page, name="join_page"),
-    # path('join/<int:id>/', views.join, name="join"),
+    path('join_page/<int:id>/', views.join_page, name="join_page"),
+    path('join/<int:id>/', views.join, name="join"),
     path('participants/', views.participants, name="participants"),
     # path('joined_meetings/', views.joined_meetings, name="joined_meetings"),
-    # path('fail/', views.fail, name ="fail"),
+    path('fail/', views.fail, name ="fail"),
+    path('check_pwd/', views.check_pwd, name="check_pwd"),
 ]

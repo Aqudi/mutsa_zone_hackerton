@@ -21,7 +21,7 @@
     border-left-width: 5px;
    border-left-color: gray;
    border-left-style: solid;
-   padding-left: 5px;
+   padding-left: 11px;
    font-size:30px;
     
     
@@ -65,7 +65,7 @@
     margin: auto 0;
     margin-bottom:50px;
     font-family: inherit;
-    
+    font-weight:normal;
     font-size:50px;
     color:white;
     
@@ -224,6 +224,14 @@ margin-left:8%;
     text-decoration:none;
     color:white;
     background-color:orange;
+}
+#mylist-gtj{
+
+    padding-left:400px;
+}
+#mylistbutton-gtj
+{
+    float:right;
 }
 
 

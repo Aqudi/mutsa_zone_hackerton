@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h2 class='chr' style="width:max-content-center">참여신청한 모임을 확인하기 위해</h2>
+<h2 class='chr' style="width:max-content-center">이메일 주소를 입력해주세요</h2>
+    <div class="titlechr"></div>
+    <form class="form-horizontal">
+  <div class="form-group has-success has-feedback">
+    <label class="control-label col-sm-3 title" for="inputSuccess3">Email</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control box" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+      <!-- <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> 
+      <span id="inputSuccess3Status" class="sr-only">(success)</span>-->
+    </div>
+    <!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">확인</button>
+<button type="button" class="btn btn-warning cancel">취소</button>
+  </div> 
+  
+  
+</form>
 {% endblock %}

@@ -2,19 +2,32 @@
 
 {% block content %}
 
-<h2 class='chr' style="width:max-content-center">참여신청한 모임을 확인하기 위해</h2>
-<h2 class='chr' style="width:max-content-center">비밀번호 주소를 입력해주세요</h2>
+<h2 class='chr' style="width:max-content-center">
+  {% if request.GET.action == "edit" %}
+  글을 수정하기 위해
+  {% endif %}
+  
+  {% if request.GET.action == "delete" %}
+  글을 삭제하기 위해
+  {% endif %}
+  비밀번호를 입력해 주세요.
+</h2>
+<!--<h2 class='chr' style="width:max-content-center">비밀번호를 입력해주세요</h2>-->
     <div class="titlechr"></div>
-    <form class="form-horizontal" action="{% url 'meetings:verification' %}" method = "POST">
+    
+    <form class="form-horizontal" action="{% url 'meetings:check_pwd'%}" method = "POST">
+      {% csrf_token %}
+      <input type="hidden" name="action" value="{{ request.GET.action }}">
+      <input type="hidden" name="id" value="{{ request.GET.id }}">
   <div class="form-group has-success has-feedback">
     <label class="control-label col-sm-3 title" for="inputSuccess3">비밀번호</label>
     <div class="col-sm-5">
-      <input type="email" class="form-control box" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+      <input type="text" class="form-control box" id="inputSuccess3" aria-describedby="inputSuccess3Status" name="password">
       <!-- <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> 
       <span id="inputSuccess3Status" class="sr-only">(success)</span>-->
     </div>
     <!-- Indicates caution should be taken with this action -->
-<a href ="#" class ="btn btn-primary">확인</a>
+<input type="submit" class ="btn btn-primary" value="확인">
   </div> 
   
   

@@ -33,8 +33,13 @@ class Participant(models.Model):
     email = models.CharField(max_length=200) # 참가자 이메일
     school = models.CharField(max_length=200) # 참가자 소속학교
     motive = models.TextField() # 참여동기
-
+    
+    meeting_category = models.CharField(max_length=200)
+    meeting_title = models.CharField(max_length=200)
+    meeting_writer = models.CharField(max_length=200)
+    
     meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE)
+    # meetings = models.ManyToManyField(Meeting)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

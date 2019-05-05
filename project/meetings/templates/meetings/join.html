@@ -1,33 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>모임 참여</h1>
-<table class="table table-striped">
-    <tbody>
-        <tr>
-            <th scop="row">모임제목 : </th>
-            <td>{{title}}</td>
-        </tr>
+<div class="container">
         
-        <tr>
-            <th scop="row">이름</th>
-            <td><input type="text" name="name"></td>  
-            <th scop="row">이메일</th>
-            <td><input type="text" name="email"></td> 
-        </tr>
-        
-        <tr>
-            <th scop="row">소속학교</th>
-            <td><input type="text" name="school"></td>   
-        </tr>
-        
-        <tr>
-            <th scop="row">참여동기</th>
-            <td><textarea placeholder="참여동기를 입력해주세요." name="motive">
-            </textarea></td>
-        </tr>
-    </tbody>
-</table>
+    <h1>모임 참여</h1>
+    <table class="table table-striped row-head-htj">
+        <form action="{% url 'meetings:join' meeting.id %}" method="POST">
+        <tbody>
+            <tr>
+                <th>모임제목 : </th>
+                <td>{{meeting.title}}</td>
+                <th></th>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <th>이름 : </th>
+                <td><input type="text" name="name" placeholder="이름"></td>  
+                <th>이메일 : </th>
+                <td><input type="text" name="email" placeholder="이메일"></td> 
+            </tr>
+            
+            <tr>
+                <th>소속학교 : </th>
+                <td><input type="text" name="school" placeholder="학교"></td>  
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>참여동기 : </th>
+                <div class="col-12">
+                <td colspan="12">
+                    <textarea name="motive" style="width: 100%; resize:none; height:20em;"
+                    placeholder="참여동기를 입력해주세요.">
+                    </textarea>
+                </td>
+                </div>
+            </tr>
+            <tr></tr>
+            <tr>               
+            <th></th>
+            <td></td>
+            <th></th>
+            <div class="col-12">
+                <td>
+                    <button type="submit">참석요청</button>
+                    <button type="button">
+                        <a href="{% url 'meetings:list' %}">취소</a>
+                    </button>
+                </td>
+            </div>
+            </tr>
+        </tbody>
+        </form>
+    </table>
 
+</div>
 
 {% endblock %}

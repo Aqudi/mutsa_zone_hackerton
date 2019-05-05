@@ -32,18 +32,29 @@ def list(request):
 def join_page(request, id):
     meeting = Meeting.objects.get(pk=id)
     title = meeting.title
-    return render(request, 'meetings/join.html', {'title': title})
+    return render(request, 'meetings/join.html', {'meeting':meeting})
+    # return render(request, 'meetings/join.html', {'title': title})
+    # title을 보내면 다시 meeting의 id를 보내야해서 객체를 바로보낼께용
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 
 # 모임 참여 신청
 def join(request, id):
     if request.method == "POST":
+        meeting = Meeting.objects.get(pk=id)
+        
         name = request.POST.get('name')
         email = request.POST.get('email')
         school = request.POST.get('school')
         motive = request.POST.get('motive')
-        meeting = Meeting(name = name, email = email, school = school, motive = motive)
-        meeting.save()
+        meeting_category = meeting.category
+        meeting_title = meeting.title
+        meeting_writer = meeting.writer
+        participant = Participant(name = name, email = email, school = school, motive = motive, meeting_category = meeting_category, meeting_title = meeting_title, meeting_writer = meeting_writer,)
+        participant.save()
+        
+        # participant.meetings.add(meeting)
+        
+        
         return redirect('meetings:list')
         
 
@@ -125,3 +136,21 @@ def search(request):
     search_result = Meeting.objects.filter(title__contains=search)
     
     return render(request, 'meetings/search_result.html', {'search_result': search_result})
+
+
+# 비밀번호 체크
+def check_pwd(request):
+    id = request.POST.get('id')
+    meeting = get_object_or_404(Meeting, pk=id)
+    
+    pwd = request.POST.get('password')
+    
+    if pwd == meeting.password:
+        if request.POST.get('action') == "edit":
+            return redirect('edit', id)
+        
+        else:
+            return redirect('meetings:delete', id)
+            
+    else:
+        return redirect('meetings:fail')
