@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-
-<h1 id="participants-head-gtj">참여신청한 모임 목록</h1>
-
-<table class="table table-bordered">
+<div class="container" id="top-htj">
+    <div class="row">
+        <h1 class="content-name-htj" class="col-12">참여신청한 모임 목록</h1>
+        <h3 class="sub-content-name-htj col-12">현재 개설되어 있는 모임 목록입니다.</h3>
+    </div>
+    <br>
+    <table class="table table-bordered">
         <thead>
             <tr class="tr-list-htj">
                 <th width="12%">글번호</th>
                 <th width="14%">모임종류</th>
-                <th width="33%">제목</th>
+                <th width="35%">제목</th>
                 <th width="12%">작성자</th>
                 <th width="15%">게시일</th>
                 <th width="12%">조회수</th>
@@ -18,11 +20,20 @@
         </thead>
         <tbody>
         <!--django 데이터--->
-        {%for meeting in meetings %}
-        
-        {%endfor%}
-                
-            </tr>
+        {% for meeting in meetings %}
+        <tr>
+            <td>{{ meeting.id }}</td>
+            <td>{{ meeting.category }}</td>
+            <td><a href="{% url 'meetings:read' meeting.id %}">{{ meeting.title }}</a></td>
+            <td>{{ meeting.writer }}</td>
+            <td>{{ meeting.created_at }}</td>
+            <td>{{ meeting.view_count }}</td>
+        </tr>
+        {% endfor %}
         </tbody>
     </table>
+</div>
+
+<button type="button" onclick="topFunction()" class="scrollBtn" id="myBtn">Top</button>
+
 {% endblock %}

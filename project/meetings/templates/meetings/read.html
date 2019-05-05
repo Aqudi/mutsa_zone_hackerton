@@ -1,5 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 id="readhead-gtj">장고 스터디 모집해요</h1>
+<div id="readall-gtj">
+    <h1 id="readhead-gtj">{{ meeting.title }}</h1>
+    <table class="table">
+        <tbody>
+            <tr class="tr-list-htj">
+                <th scop="row">작 성 자 : </th>
+                <td>{{ meeting.category }}</td>
+                 <th scop="row">게 시 일 : </th>
+                <td>{{ meeting.category }}</td>
+            </tr>
+            
+            <tr class="tr-list-htj">
+                <th scop="row">모임주제</th>
+                <td>{{ meeting.category }}</td>
+                <th scop="row">최소인원</th>
+                <td>{{ meeting.category }}</td>    
+            </tr>
+            
+            <tr class="tr-list-htj">
+                <th scop="row">진행시간</th>
+                <td>{{ meeting.category }}</td>
+                <th scop="row">진행장소</th>
+                <td>{{ meeting.category }}</td>    
+            </tr>
+            
+            <tr class="tr-list-htj">
+                <th scop="row">신청인원</th>
+                <td>{{ meeting.category }}</td>
+            </tr>
+            
+            <tr class="tr-list-htj">
+                <th scop="row">모임설명</th>
+                <td>{{ meeting.category }}</td>    
+            </tr>
+            
+            <tr class="tr-list-htj">
+                <th scop="row">이메일</th>
+                <td>{{ meeting.category }}</td>
+            </tr>
+        </tbody>
+</table>
+    <div id="readbutton-gtj">
+        <a href="#"><p id="readbutton-gtj1">신청자 명단 확인</p></a>
+        <br>
+        <a href="#"><p id="readbutton-gtj2">모임 참여 신청하기</p></a>
+        <a href="#"><p id="readbutton-gtj3">수정</p></a>
+        <a href="#"><p id="readbutton-gtj4">삭제</p></a>
+    </div>
+</div>
+
+
 {% endblock %}

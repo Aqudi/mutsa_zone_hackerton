@@ -97,8 +97,12 @@ def read(request, id):
     default_view_count = meeting.view_count
     meeting.view_count = default_view_count + 1
     meeting.save()
-    return render(request, 'meeting/read.html', {'meeting': meeting})
+    return render(request, 'meetings/read.html', {'meeting': meeting})
 
+
+#fail
+def fail(request):
+    return render(request, 'meetings/fail.html')
 
 # 비밀번호 입력 창
 def verification(request):
@@ -117,7 +121,7 @@ def joined_meetings(request):
         participant = Participant.objects.get(email = email)
     return render(request, 'meetings/participants.html', {'participant':participant})
     
-    
+# 검색하기   
 def search(request):
     search = request.GET.get('search')
     search_result = Meeting.objects.filter(title__contains=search)

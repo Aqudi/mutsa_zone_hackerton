@@ -11,12 +11,12 @@
         <!--테이블 위 버튼셋-->
         <div class="input-group col">
             <button class="btn btn-outline-secondary" type="button">
-                <a href="{% url 'meethings:create' %">모임개설하기</a>
+                <a href="{% url 'meetings:create' %}">모임개설하기</a>
             </button>
         </div>
-        <form action="#">
+        <form action="{% url 'meetings:search' %}">
             <div class="input-group col-12">     
-                <input type="text" class="form-control" placeholder="검색어">
+                <input type="text" class="form-control" placeholder="검색어" name="search">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">
                         검색

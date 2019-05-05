@@ -14,12 +14,12 @@
     
     text-decoration: none;
     font-family: 'Jua', sans-serif;
-    color:orange;
+    color:gray;
     
     
     
     border-left-width: 5px;
-   border-left-color: orange;
+   border-left-color: gray;
    border-left-style: solid;
    padding-left: 5px;
    font-size:30px;
@@ -27,26 +27,29 @@
     
 }
 .header-wrapper-gtj{
+    padding-top:15px;
     text-align:right;
     display:block;
-    margin-bottom:70px;
+    padding-bottom:15px;
+    background-color:black;
 }
 
 #head1-gtj:hover{
-    color:gray;
-    border-color:gray;
+    color:white;
+    border-color:white;
 }
 #head2-gtj:hover{
-    color:gray;
-    border-color:gray;
+    color:white;
+    border-color:white;
     
 }
 #head3-gtj:hover{
     
-    color:gray;
-    border-color:gray;
+    color:white;
+    border-color:white;
 }
 #service-name-gtj{
+    padding-top:200px;
     text-align:center;
     margin: auto 0;
     margin-bottom:50px;
@@ -57,7 +60,7 @@
 #text-gtj{
     
     font-family: 'Jua', sans-serif;
-    color:rgba(201, 199, 199, 0.603);
+    color:white;
     font-size:30px;
     text-align:center;
 }
@@ -111,9 +114,106 @@ body{
     font-size:13px;
 }
 
-#meetings-gtj{
-    color:;
+#readall-gtj{
+
+margin-right:8%;
+margin-left:8%;
+
 }
+
+
+
+#readhead-gtj{
+    color:red;
+    text-decoration: underline;
+    font-size:40px;
+    padding:0.5em;
+}
+#readtext-gtj{
+
+
+    font-size:20px;
+    display:inline-block;
+    margin-right:500px;
+    margin-block-start:30px;
+    margin-block-end:30px;
+}
+#readtext-gtj2{
+
+    font-size:20px;
+    display:inline-block;
+    margin-right:500px;
+    margin-block-start:30px;
+    margin-block-end:30px;
+}
+#readtext-gtj3{
+    font-size:20px;
+    display:inline-block;
+    margin-right:500px;
+    margin-block-start:30px;
+    margin-block-end:30px;
+}
+#readbutton-gtj1{
+    margin-left:70%;
+    display:inline-block;
+}
+#readbutton-gtj2,#readbutton-gtj3,#readbutton-gtj4{
+
+    display:inline-block;
+}
+#readbutton-gtj1{
+
+    margin-left:70%;
+    padding-right:30px;
+    padding-top:3px;
+    padding-left:30px;
+    padding-bottom:3px;
+    border-color:black;
+    border-style: solid;
+    border-width:3px;
+    text-decoration:none;
+    color:white;
+    background-color:orange;
+    
+}
+#readbutton-gtj2{
+    margin-right:55%;
+    padding-right:30px;
+    padding-top:3px;
+    padding-left:30px;
+    padding-bottom:3px;
+    border-color:black;
+    border-style: solid;
+    border-width:3px;
+    text-decoration:none;
+    color:white;
+    background-color:orange;
+}
+#readbutton-gtj3{
+    padding-right:30px;
+    padding-top:3px;
+    padding-left:30px;
+    padding-bottom:3px;
+    border-color:black;
+    border-style: solid;
+    border-width:3px;
+    text-decoration:none;
+    color:white;
+    background-color:orange;
+}
+#readbutton-gtj4{
+    padding-right:30px;
+    padding-top:3px;
+    padding-left:30px;
+    padding-bottom:3px;
+    border-color:black;
+    border-style: solid;
+    border-width:3px;
+    text-decoration:none;
+    color:white;
+    background-color:orange;
+}
+
 
 
 
