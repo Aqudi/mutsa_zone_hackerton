@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="container">
 <div id="totop-gtj">
     <h1 class="content-name-htj">참여신청한 모임 목록</h1>
-    <p id="mylist-gtj">{{ email }}님이 참여신청하신 모임 목록입니다.</p>
+    <h3 class="sub-content-name-htj">{{ email }}님이 참여신청하신 모임 목록입니다.</h3>
     
     <div id="top-htj" class="container">
     <!--<div class="row">-->
@@ -58,6 +58,7 @@
         
         </tbody>
     </table>
+</div>
 </div>
 </div>
 <button type="button" onclick="topFunction()" class="scrollBtn" id="myBtn">Top</button>
