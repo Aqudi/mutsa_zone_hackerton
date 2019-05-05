@@ -121,8 +121,9 @@ def verification(request):
 # 참가자 목록
 def participants(request, id):
     meeting = Meeting.objects.get(pk=id)
+    title = meeting.title
     participants = Participant.objects.all().filter(meeting=meeting)
-    return render(request, 'meetings/participants.html', {'participants':participants})
+    return render(request, 'meetings/participants.html', {'participants':participants, 'title': title})
     
 # 내가 신청한 모임 누르면 email치는 html로 넘어가는 함수
 # def show(request):

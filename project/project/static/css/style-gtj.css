@@ -3,8 +3,8 @@
     margin-bottom:200px;
 }
 #logosize{
-    padding-left: 20px;
-    width:300px;
+    padding-left: 25px;
+    width:400px;
     text-align:left;
     float:left;
 }
@@ -15,18 +15,43 @@
     
     text-decoration: none;
     font-family: 'Jua', sans-serif;
-    color:gray;
+    color:white;
     
+   border-color:orange;
+   
     
-    
-    border-left-width: 5px;
-   border-left-color: gray;
-   border-left-style: solid;
-   padding-left: 11px;
+    border-width: 5px;
+   
+   border-style: solid;
+   padding-left: 8px;
+   padding-right: 8px;
+   padding-top: 8px;
+   padding-bottom: 8px;
    font-size:30px;
+   background-color:orange;
+   
+  border-radius: 5px 5px 5px 5px/ 5px 5px 5px 5px;
+  transition: 0.6s;
     
     
-}    
+}  
+
+#head1-gtj:hover{
+    background-color:white;
+    color:orange;
+    border-color:white;
+}
+#head2-gtj:hover{
+    background-color:white;
+    color:orange;
+    border-color:white;
+}
+#head3-gtj:hover{
+    background-color:white;
+    color:orange;
+    border-color:white;
+}
+
 .header-wrapper-gtj{
     padding-top:15px;
     text-align:right;
@@ -36,20 +61,7 @@
     background-color:black;
 }
 
-#head1-gtj:hover{
-    color:white;
-    border-color:white;
-}
-#head2-gtj:hover{
-    color:white;
-    border-color:white;
-    
-}
-#head3-gtj:hover{
-    
-    color:white;
-    border-color:white;
-}
+
 #producer-gtj{
     font-size:20px;
     text-align:center;
@@ -284,6 +296,8 @@ tbody tr:hover {
   }
 }
 
+
+
 .center-htj{
   width:100%;
   text-align:center;
@@ -316,4 +330,9 @@ tbody tr:hover {
     border-color: #000000;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+
+.btntj:hover{
+  color:white;
 }
