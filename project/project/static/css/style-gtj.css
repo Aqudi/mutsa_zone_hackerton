@@ -1,0 +1,94 @@
+#blank-gtj{
+
+    margin-bottom:200px;
+}
+#logosize{
+    width:300px;
+    text-align:left;
+    float:left;
+}
+#head1-gtj,#head2-gtj,#head3-gtj{
+    display:inline-block;
+    margin-right:30px;
+    text-align:right;
+    
+    text-decoration: none;
+    font-family: 'Jua', sans-serif;
+    color:orange;
+    
+    
+    
+    border-left-width: 5px;
+   border-left-color: orange;
+   border-left-style: solid;
+   padding-left: 5px;
+   font-size:30px;
+    
+    
+}
+.header-wrapper-gtj{
+    text-align:right;
+    display:block;
+    margin-bottom:70px;
+}
+
+#head1-gtj:hover{
+    color:gray;
+    border-color:gray;
+}
+#head2-gtj:hover{
+    color:gray;
+    border-color:gray;
+    
+}
+#head3-gtj:hover{
+    
+    color:gray;
+    border-color:gray;
+}
+#service-name-gtj{
+    text-align:center;
+    margin: auto 0;
+    margin-bottom:50px;
+    font-family: 'Jua', sans-serif;
+    font-size:50px;
+    
+}
+#text-gtj{
+    
+    font-family: 'Jua', sans-serif;
+    color:rgba(201, 199, 199, 0.603);
+    font-size:30px;
+    text-align:center;
+}
+#text-group-gtj{
+    
+    text-align:center;
+    margin-bottom:400px;
+}
+#bottombar-gtj{
+    margin: 0 auto;
+    width:400px;
+}
+
+body{
+    
+}
+
+.main-container{
+    background-image:url("/static/images/background.jpeg");
+    background-size :cover;
+    width:100%;
+    height:100%;
+    
+}
+
+#bottombar-gtj2{
+    float: center;
+    text-align:center;
+    margin: 0 auto;
+}
+
+.inline-htj{
+    display: inline-block;
+}

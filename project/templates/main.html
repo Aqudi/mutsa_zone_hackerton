@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-    <h1>메인 페이지</h1>
+
+<div class='main-container'>
+    <div class='container'>
+        
+        <h1 id="service-name-gtj">멋사 ZONE</h1>
+        <div id=text-group-gtj>
+        <p id="text-gtj">전국 연합 동아리지만 큰 행사가 있지 않는 이상</p>
+        <p id="text-gtj">다른 학교 학생들과 모이기가 힘든 '멋쟁이 사자처럼'</p>
+        <p id="text-gtj">이제 	&lsaquo;멋사 ZONE&rsaquo;에서 자유롭게 모임을 개설하고 참여하며</p>
+        <p id="text-gtj">다른 학교의 사자들과 즐겁게 교류하는 시간을 보내요!</p>
+        </div>
+        <div id="bottombar-gtj2">
+        <a href="{% url 'meetings:list' %}"><img  id="bottombar-gtj"src="{% static 'images/bottombar.png' %}"></img></a>
+        </div>
+    </div>
+    
+</div>
+    
+
+    
 {% endblock %}

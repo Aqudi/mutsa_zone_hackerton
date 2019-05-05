@@ -1,5 +1,49 @@
 {% extends 'base.html' %}
-
+    
 {% block content %}
-
+<div class="container">
+    <h1 id="service-name-gtj">모임 목록</h1>
+    <h3>현재 개설되어 있는 모임 목록입니다.</h3>
+    <!-- Table -->
+    <div class="inline row">
+        <div class="inline col-2">
+            <span class="input-button">모임개설하기</span>
+        </div>
+        <div>
+            <form action="search_result">
+                <div class="input-group">
+                    <!--모임 검색을 할 시 검색할 keyword를 넣는 input-->
+                    <input type="text" class="form-control" 
+                            placeholder="Search for..." name="search_keyword">
+                    <span class="input-group-btn">
+                    <button class="submit" type="button">모임검색</button>
+                </div>
+            </form>
+        </div>
+        <form>
+            <div class="input-group pull-right inline">
+                
+              </span>
+            </div>
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>글번호</th>
+                <th>모임종류</th></th></th>
+                <th>제목</th></th>
+                <th>작성자</th>
+                <th>게시일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!--django 데이터--->
+            </tr>
+        </tbody>
+    </table>
+    <div id="bottombar-gtj2">
+</div>
 {% endblock %}

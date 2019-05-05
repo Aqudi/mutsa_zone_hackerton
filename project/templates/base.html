@@ -14,34 +14,33 @@
     <link rel="shortcut icon" href="https://likelion.net/assets/favicons/favicon-841c731d4bf227cdbfe4fe4245d7750b2c18c37f61810aa6100de9174db89e4f.ico">
     
     <!-- CSS -->
-    <!--<link rel="stylesheet" href="{% static 'css/project.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/style-gtj.css' %}">
     
     <!-- Javascirpt -->
     <script type="text/javascript" src="{% static 'js/scrollbtn.js' %}"></script>
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
 
     <title>멋사ZONE</title>
   </head>
   <body>
       <!-- navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="#">Features</a>
-              <a class="nav-item nav-link" href="#">Pricing</a>
-              <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </div>
-          </div>
-        </nav>
+      <div class="header-wrapper-gtj">
         
-      <div class="container">
+            <img id="logosize"src="{% static 'images/logo.png' %}"></img>
+            <a href="#"><h1 id="head1-gtj">모임목록</h1></a>    
+            <a href="#"><h1 id="head2-gtj">모임 개설하기</h1></a>
+            <a href="#"><h1 id="head3-gtj">내가 신청한 모임</h1></a>
+      </div>
+      
+    
+      
+        
+      <div>
       {% block content %}
       
       {% endblock %}
