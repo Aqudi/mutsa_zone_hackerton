@@ -4,8 +4,8 @@
 	<br>
 	 {% if request.GET.action == "edit" %}
 	<h1 class="content-name-htj">글 수정하기</h1>
-	<div class="center-htj" style="width:max-content-center">
-		<h2 class="sub-content-name-htj chr">글을 수정하기 위해 비밀번호를 입력해 주세요.</h2>
+	<div style="width:max-content-center">
+		<h2 class="chr">글을 수정하기 위해 비밀번호를 입력해 주세요.</h2>
 	</div>
 	 {% endif %}
 	<h2 class="chr"> {% if request.GET.action == "delete" %} 글을 삭제하기 위해 비밀번호를 입력해 주세요. 삭제된 글은 복구할 수 없습니다. {% endif %} </h2>
