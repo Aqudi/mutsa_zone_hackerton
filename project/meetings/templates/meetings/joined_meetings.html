@@ -1,22 +1,24 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h2 class='chr' style="width:max-content-center">참여신청한 모임을 확인하기 위해</h2>
-<h2 class='chr' style="width:max-content-center">이메일 주소를 입력해주세요</h2>
-    <div class="titlechr"></div>
-    <form class="form-horizontal">
-  <div class="form-group has-success has-feedback">
-    <label class="control-label col-sm-3 title" for="inputSuccess3">Email</label>
-    <div class="col-sm-5">
-      <input type="email" class="form-control box" id="inputSuccess3" aria-describedby="inputSuccess3Status" name="email">
-      <!-- <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> 
-      <span id="inputSuccess3Status" class="sr-only">(success)</span>-->
-    </div>
-    <!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">확인</button>
-<button type="button" class="btn btn-warning cancel">취소</button>
-  </div> 
-  
-  
-</form>
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+	<h1 class="content-name-htj">내가 신청한 모임</h1>
+	<div id="chr-center-gtj">
+	<h3 class='chr' style="width:max-content-center">참여신청한 모임을 확인하기 위해</h3>
+	<h3 class='chr' style="width:max-content-center">이메일 주소를 입력해주세요</h3>
+	</div>
+	<div class="titlechr">
+	</div>
+	<form class="form-horizontal" action="{% url 'meetings:joined_meetings' %}" method="POST">
+		 {% csrf_token %}
+		<div class="form-group has-success has-feedback">
+			<div class="input-group">
+			  <label class="control-label title" for="inputSuccess3">Email</label>
+				<input type="email" class="form-control box" placeholder="Input your email" name="email">
+				<div class="input-group-append" id="button-addon4">
+				  <input type="submit" class="btn btn-outline-secondary" value="확인"></button>
+				  <a href="{% url 'meetings:list' %}" class="btn btn-outline-secondary">취소</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
 {% endblock %}

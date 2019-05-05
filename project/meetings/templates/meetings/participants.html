@@ -1,41 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container" id="top-htj">
-    <div class="row">
-        <h1 class="content-name-htj" class="col-12">참가자 목록</h1>
-        <!--<h3 class="sub-content-name-htj col-12">현재 개설되어 있는 모임 목록입니다.</h3>-->
-    </div>
+<div class="container">
+<h1 id="participants-head-gtj" class="content-name-htj">모임 참가자 목록</h1>
+<h3 class="sub-content-name-htj">참가자 목록입니다.</h3>
+
     <br>
     <table class="table table-bordered table-htj">
         <thead>
             <tr class="tr-list-htj">
-                <th width="12%">글번호</th>
-                <th width="14%">모임종류</th>
-                <th width="35%">제목</th>
-                <th width="12%">작성자</th>
-                <th width="15%">게시일</th>
-                <th width="12%">조회수</th>
+                <th width="8%">순번</th>
+                <th width="13%">이름</th>
+                <th width="45%">참여동기</th>
+                <th width="15%">소속학교</th>
+                <th width="20%">이메일</th>
             </tr>
         </thead>
+    {% for item in participants %}
         <tbody>
-        <!--django 데이터--->
-        {% for participant in participants %}
-        {% if participant.name ==  %}%}
         <tr>
-            <td>{{ meeting.id }}</td>
-            <td>{{ meeting.category }}</td>
-            <td><a href="{% url 'meetings:read' meeting.id %}">{{ meeting.title }}</a></td>
-            <td>{{ meeting.writer }}</td>
-            <td>{{ meeting.created_at }}</td>
-            <td>{{ meeting.view_count }}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.motive}}</td>
+            <td>{{item.school}}</td>
+            <td>{{item.email}}</td>
+           
         </tr>
-        {% endif %}
-        {% endfor %}
         </tbody>
+    {% endfor %}
     </table>
+</div>
+<table>
 </div>
 
 <button type="button" onclick="topFunction()" class="scrollBtn" id="myBtn">Top</button>
-
+</div>
 {% endblock %}

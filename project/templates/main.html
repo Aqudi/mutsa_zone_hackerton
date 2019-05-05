@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class='main-container'>
-    <div class='container'>
+    <div class='container'> 
         <strong><h1 id="service-name-gtj1">멋쟁이 사자처럼</h1></strong>
         <div id="likelionzone-gtj">
         <h1 id="service-name-gtj2">멋사 </h1>
@@ -22,9 +22,15 @@
         <a href="{% url 'meetings:list' %}"><img  id="bottombar-gtj"src="{% static 'images/bottombar.png' %}"></img></a>
         </div>
     </div>
-    
+    <p id="producer-gtj">produced by 권택준 김연진 문혜린 이주영 최혜린 허태정</p>
 </div>
-    
+
+
+<style>
+    h1{
+        margin:0;
+    }
+</style>
 
     
 {% endblock %}

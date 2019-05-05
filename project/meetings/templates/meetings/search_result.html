@@ -5,8 +5,8 @@
 <div class="container" id="top-htj">
     <div class="row">
         <h1 class="content-name-htj" class="col-12">모임 검색 결과</h1>
-        <h3 class="sub-content-name-htj col-12">
-            <div class="colored-red-htj">{{search_keyword}}</div>
+        <h3 class="sub-content-name-htj inline-htj col-12">
+            <div class="colored-red-htj inline-htj">{{search_keyword}}</div>
             이 제목에 포함된 결과입니다.
         </h3>
     </div>
@@ -44,14 +44,14 @@
         </thead>
         <tbody>
         <!--django 데이터--->
-        {% for meeting in meetings %}
+        {% for result in search_result %}
         <tr>
-            <td>{{ meeting.id }}</td>
-            <td>{{ meeting.category }}</td>
-            <td><a href="{% url 'meetings:read' meeting.id %}">{{ meeting.title }}</a></td>
-            <td>{{ meeting.writer }}</td>
-            <td>{{ meeting.created_at }}</td>
-            <td>{{ meeting.view_count }}</td>
+            <td>{{ result.id }}</td>
+            <td>{{ result.category }}</td>
+            <td><a href="{% url 'meetings:read' result.id %}">{{ result.title }}</a></td>
+            <td>{{ result.writer }}</td>
+            <td>{{ result.created_at }}</td>
+            <td>{{ result.view_count }}</td>
         </tr>
         {% endfor %}
         </tbody>

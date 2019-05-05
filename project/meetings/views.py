@@ -25,7 +25,7 @@ def create(request):
 
 # 모임 목록
 def list(request):
-    meetings = Meeting.objects.all()
+    meetings = Meeting.objects.all().order_by('-id')
     return render(request, 'meetings/list.html', {'meetings': meetings})
     
 # 모임 참여 페이지로 넘어가는 것 - id 받아서 다시 넘겨야 함
@@ -116,16 +116,21 @@ def verification(request):
     
 # 참가자 목록
 def participants(request, id):
-    participants = get_object_or_404(Participant, meeting=id)
-    return render(request, 'meetings/participnats.html', {'participants':participants})
+    meeting = Meeting.objects.get(pk=id)
+    participants = Participant.objects.all().filter(meeting=meeting)
+    return render(request, 'meetings/participants.html', {'participants':participants})
     
+# 내가 신청한 모임 누르면 email치는 html로 넘어가는 함수
+# def show(request):
+#     return render(request, 'meetings/joined_meetings.html')
 
 # 참여한 목록 확인
 def joined_meetings(request):
     if request.method == "POST":
-        email = request.POST.get('email')
-        participant = Participant.objects.get(email = email)
-    return render(request, 'meetings/participants.html', {'participant':participant})
+        input_email = request.POST.get('email')
+        participant = Participant.objects.filter(email=input_email)
+        return render(request, 'meetings/my_list.html', {'participant': participant, 'email': input_email})
+    return render(request, 'meetings/joined_meetings.html')
     
 # 검색하기   
 def search(request):
@@ -144,6 +149,7 @@ def check_pwd(request):
     
     if pwd == meeting.password:
         if request.POST.get('action') == "show_participants":
+            
             return redirect('meetings:participants', id)
             
         if request.POST.get('action') == "edit":

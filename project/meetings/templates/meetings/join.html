@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
         
-    <h1>모임 참여</h1>
+    <h1 class="content-name-htj">모임 참여</h1>
     <table class="table table-striped row-head-htj">
         <form action="{% url 'meetings:join' meeting.id %}" method="POST">
             {% csrf_token %}
