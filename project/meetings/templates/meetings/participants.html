@@ -2,4 +2,27 @@
 
 {% block content %}
 
+
+<h1 id="participants-head-gtj">참여신청한 모임 목록</h1>
+
+<table class="table table-bordered">
+        <thead>
+            <tr class="tr-list-htj">
+                <th width="12%">글번호</th>
+                <th width="14%">모임종류</th>
+                <th width="33%">제목</th>
+                <th width="12%">작성자</th>
+                <th width="15%">게시일</th>
+                <th width="12%">조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!--django 데이터--->
+        {%for meeting in meetings %}
+        
+        {%endfor%}
+                
+            </tr>
+        </tbody>
+    </table>
 {% endblock %}

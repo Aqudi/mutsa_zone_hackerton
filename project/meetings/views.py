@@ -7,7 +7,7 @@ def create(request):
     if request.method == "POST":
         category = request.POST.get('category')
         title = request.POST.get('title')
-        writer = request.POST.get('writier')
+        writer = request.POST.get('writer')
         min_number = request.POST.get('min_number')
         max_number = request.POST.get('max_number')
         meeting_time = request.POST.get('meeting_time')
@@ -16,7 +16,7 @@ def create(request):
         writer_email = request.POST.get('writer_email')
         password = request.POST.get('password')
         
-        meeting = Meeting(category = category, title = title, wrtier = writer, min_number = min_number, max_number = max_number, meeting_time = meeting_time, meeting_place = meeting_place, description = description, writer_email = writer_email, password=password)
+        meeting = Meeting(category = category, title = title, writer = writer, min_number = min_number, max_number = max_number, meeting_time = meeting_time, meeting_place = meeting_place, description = description, writer_email = writer_email, password=password)
         meeting.save()
         return redirect('list')
         
@@ -26,7 +26,7 @@ def create(request):
 # 모임 목록
 def list(request):
     meetings = Meeting.objects.all()
-    return render(request, 'meetings/list.html', {'meetings':meetings})
+    return render(request, 'meetings/list.html', {'meetings': meetings})
     
 # 모임 참여 페이지로 넘어가는 것 - id 받아서 다시 넘겨야 함
 def join_page(request, id):
@@ -35,6 +35,7 @@ def join_page(request, id):
     return render(request, 'meetings/join.html', {'title': title})
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 
+# 모임 참여 신청
 def join(request, id):
     if request.method == "POST":
         
@@ -60,7 +61,7 @@ def update(request, id):
         meeting = get_object_or_404(Meeting, pk=id)
         category = request.POST.get('category')
         title = request.POST.get('title')
-        writer = request.POST.get('writier')
+        writer = request.POST.get('writer')
         min_number = request.POST.get('min_number')
         max_number = request.POST.get('max_number')
         meeting_time = request.POST.get('meeting_time')
@@ -99,5 +100,26 @@ def read(request, id):
     return render(request, 'meeting/read.html', {'meeting': meeting})
 
 
+# 비밀번호 입력 창
 def verification(request):
     return render(request, 'meetings/verification.html')
+    
+# 참가자 목록
+def participants(request, id):
+    participants = get_object_or_404(Participant, pk = id)
+    return render(request, 'meetings/participnats.html', {'participants':participants})
+    
+
+# 참여한 목록 확인
+def joined_meetings(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        participant = Participant.objects.get(email = email)
+    return render(request, 'meetings/participants.html', {'participant':participant})
+    
+    
+def search(request):
+    search = request.GET.get('search')
+    search_result = Meeting.objects.filter(title__contains=search)
+    
+    return render(request, 'meetings/search_result.html', {'search_result': search_result})

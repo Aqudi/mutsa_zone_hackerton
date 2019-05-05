@@ -20,6 +20,10 @@ class Meeting(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    # Meeting의 key를 갖고있는 Participant를 불러온다
+    # def participant(self):
+    #     return Participant.objects.filter(meeting=self)
 
 
 class Participant(models.Model):

@@ -15,6 +15,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style-gtj.css' %}">
+    <link rel="stylesheet" href="{% static 'css/scrollbtn.css' %}">
     
     <!-- Javascirpt -->
     <script type="text/javascript" src="{% static 'js/scrollbtn.js' %}"></script>
@@ -31,9 +32,9 @@
       <!-- navbar -->
       <div class="header-wrapper-gtj">
         
-            <img id="logosize"src="{% static 'images/logo.png' %}"></img>
-            <a href="#"><h1 id="head1-gtj">모임목록</h1></a>    
-            <a href="#"><h1 id="head2-gtj">모임 개설하기</h1></a>
+            <a href="{% url 'main' %}"><img id="logosize"src="{% static 'images/logo.png' %}"></img></a>
+            <a href="{% url 'meetings:list' %}"><h1 id="head1-gtj">모임목록</h1></a>    
+            <a href="{% url 'meetings:create' %}"><h1 id="head2-gtj">모임 개설하기</h1></a>
             <a href="#"><h1 id="head3-gtj">내가 신청한 모임</h1></a>
       </div>
       
