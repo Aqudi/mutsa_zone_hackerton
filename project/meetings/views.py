@@ -38,12 +38,10 @@ def join_page(request, id):
 # 모임 참여 신청
 def join(request, id):
     if request.method == "POST":
-        
         name = request.POST.get('name')
         email = request.POST.get('email')
         school = request.POST.get('school')
         motive = request.POST.get('motive')
-        
         meeting = Meeting(name = name, email = email, school = school, motive = motive)
         meeting.save()
         return redirect('meetings:list')

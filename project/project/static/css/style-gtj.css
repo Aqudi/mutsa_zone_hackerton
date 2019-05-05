@@ -32,6 +32,7 @@
     display:block;
     padding-bottom:15px;
     background-color:black;
+    
 }
 
 #head1-gtj:hover{
@@ -48,14 +49,32 @@
     color:white;
     border-color:white;
 }
-#service-name-gtj{
+#service-name-gtj1{
+    
+    font-family:inherit;
+    font-weight: bold;
+    font-size:50px;
+    text-align:center;
+    color:white;
     padding-top:200px;
+    
+}
+#service-name-gtj2{
+    
     text-align:center;
     margin: auto 0;
     margin-bottom:50px;
-    font-family: 'Jua', sans-serif;
-    font-size:50px;
+    font-family: inherit;
     
+    font-size:50px;
+    color:white;
+    
+}
+#hr-gtj{
+    color: white;    
+    border-color: white;  
+    background-color: white; 
+    height: 1px;
 }
 #text-gtj{
     
@@ -110,8 +129,8 @@ body{
     font-family: 'Jua', sans-serif;
 }
 
-.tr-list-htj{
-    font-size:13px;
+.table-htj tr{
+    font-size:16px;
 }
 
 #readall-gtj{
@@ -121,8 +140,6 @@ margin-left:8%;
 
 }
 
-
-
 #readhead-gtj{
     color:red;
     text-decoration: underline;
@@ -130,8 +147,6 @@ margin-left:8%;
     padding:0.5em;
 }
 #readtext-gtj{
-
-
     font-size:20px;
     display:inline-block;
     margin-right:500px;
@@ -158,11 +173,9 @@ margin-left:8%;
     display:inline-block;
 }
 #readbutton-gtj2,#readbutton-gtj3,#readbutton-gtj4{
-
     display:inline-block;
 }
 #readbutton-gtj1{
-
     margin-left:70%;
     padding-right:30px;
     padding-top:3px;
@@ -174,7 +187,6 @@ margin-left:8%;
     text-decoration:none;
     color:white;
     background-color:orange;
-    
 }
 #readbutton-gtj2{
     margin-right:55%;

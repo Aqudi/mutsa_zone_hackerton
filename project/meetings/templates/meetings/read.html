@@ -2,43 +2,44 @@
 
 {% block content %}
 <div id="readall-gtj">
-    <h1 id="readhead-gtj">{{ meeting.title }}</h1>
-    <table class="table">
+    <h1 id="readhead-gtj" class="inline-htj">{{ meeting.title }}</h1>
+    <h2 class="inline-htj">모임주제 : {{meeting.category}}</h2>
+    <table class="table table-striped table-htj">
         <tbody>
-            <tr class="tr-list-htj">
+            <tr>
                 <th scop="row">작 성 자 : </th>
-                <td>{{ meeting.category }}</td>
+                <td>{{ meeting.writer }}</td>
                  <th scop="row">게 시 일 : </th>
-                <td>{{ meeting.category }}</td>
+                <td>{{ meeting.created_at }}</td>
             </tr>
             
-            <tr class="tr-list-htj">
-                <th scop="row">모임주제</th>
-                <td>{{ meeting.category }}</td>
+            <tr>
                 <th scop="row">최소인원</th>
-                <td>{{ meeting.category }}</td>    
+                <td>{{ meeting.min_number }}</td>  
+                <th scop="row">최대인원</th>
+                <td>{{ meeting.max_number }}</td> 
             </tr>
             
-            <tr class="tr-list-htj">
+            <tr>
                 <th scop="row">진행시간</th>
-                <td>{{ meeting.category }}</td>
+                <td>{{ meeting.meeting_time }}</td>
                 <th scop="row">진행장소</th>
-                <td>{{ meeting.category }}</td>    
+                <td>{{ meeting.meeting_place }}</td>    
             </tr>
             
-            <tr class="tr-list-htj">
+            <tr>
                 <th scop="row">신청인원</th>
-                <td>{{ meeting.category }}</td>
+                <td>{{ meeting.current_number }}</td>
             </tr>
             
-            <tr class="tr-list-htj">
+            <tr>
                 <th scop="row">모임설명</th>
-                <td>{{ meeting.category }}</td>    
+                <td>{{ meeting.description }}</td>    
             </tr>
             
-            <tr class="tr-list-htj">
+            <tr>
                 <th scop="row">이메일</th>
-                <td>{{ meeting.category }}</td>
+                <td>{{ meeting.writer_email }}</td>
             </tr>
         </tbody>
 </table>

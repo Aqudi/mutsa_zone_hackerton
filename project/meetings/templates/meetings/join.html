@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>모임 참여</h1>
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <th scop="row">모임제목 : </th>
+            <td>{{title}}</td>
+        </tr>
+        
+        <tr>
+            <th scop="row">이름</th>
+            <td><input type="text" name="name"></td>  
+            <th scop="row">이메일</th>
+            <td><input type="text" name="email"></td> 
+        </tr>
+        
+        <tr>
+            <th scop="row">소속학교</th>
+            <td><input type="text" name="school"></td>   
+        </tr>
+        
+        <tr>
+            <th scop="row">참여동기</th>
+            <td><textarea placeholder="참여동기를 입력해주세요." name="motive">
+            </textarea></td>
+        </tr>
+    </tbody>
+</table>
+
 
 {% endblock %}

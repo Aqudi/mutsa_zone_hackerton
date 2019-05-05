@@ -2,52 +2,22 @@
 
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-	<meta charset="utf-8">
-	<script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-
-	<title>password error</title>
-	<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-</head>
-<body>
-  <!-- Button trigger modal -->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">-->
-<!-- click-->
-<!--</button>-->
-
-<!-- Modal -->
-<a href="#"  class ="btn btn-primary"  data-toggle="modal" data-target="#basicExampleModal">click</a>
-<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Password Error</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        </button>
-      </div>
-      <div class="modal-body">
-       비밀번호 오류입니다.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
+<h2 class='chr' style="width:max-content-center">참여신청한 모임을 확인하기 위해</h2>
+<h2 class='chr' style="width:max-content-center">비밀번호 주소를 입력해주세요</h2>
+    <div class="titlechr"></div>
+    <form class="form-horizontal" action="{% url 'meetings:verification' %}" method = "POST">
+  <div class="form-group has-success has-feedback">
+    <label class="control-label col-sm-3 title" for="inputSuccess3">비밀번호</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control box" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+      <!-- <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> 
+      <span id="inputSuccess3Status" class="sr-only">(success)</span>-->
     </div>
-  </div>
-</div>
-</body>
-
+    <!-- Indicates caution should be taken with this action -->
+<a href ="#" class ="btn btn-primary">확인</a>
+  </div> 
+  
+  
+</form>
 
 {% endblock %}
