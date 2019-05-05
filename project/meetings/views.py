@@ -52,6 +52,10 @@ def join(request, id):
         participant = Participant(name=name, email=email, school=school, motive=motive, meeting_category=meeting_category, meeting_title=meeting_title, meeting_writer=meeting_writer, meeting=meeting)
         participant.save()
         
+        current_num = meeting.current_number
+        meeting.current_number = current_num + 1
+        meeting.save()
+        
         # participant.meetings.add(meeting)
         return redirect('meetings:list')
         

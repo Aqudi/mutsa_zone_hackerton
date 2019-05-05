@@ -1,40 +1,33 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-<h2 class='chr' style="width:max-content-center">
-  {% if request.GET.action == "edit" %}
-  글을 수정하기 위해 비밀번호를 입력해 주세요.
-  {% endif %}
-  
-  {% if request.GET.action == "delete" %}
-  글을 삭제하기 위해 비밀번호를 입력해 주세요.
-  삭제된 글은 복구할 수 없습니다.
-  {% endif %}
-  
-  {% if request.GET.action == "show_participants" %}
-  모임 신청자 명단을 확인하기 위해 비밀번호를 입력해 주세요.
-  {% endif %}
-</h2>
-<!--<h2 class='chr' style="width:max-content-center">비밀번호를 입력해주세요</h2>-->
-    <div class="titlechr"></div>
-    
-    <form class="form-horizontal" action="{% url 'meetings:check_pwd'%}" method = "POST">
-      {% csrf_token %}
-      <input type="hidden" name="action" value="{{ request.GET.action }}">
-      <input type="hidden" name="id" value="{{ request.GET.id }}">
-  <div class="form-group has-success has-feedback">
-    <label class="control-label col-sm-3 title" for="inputSuccess3">비밀번호</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control box" id="inputSuccess3" aria-describedby="inputSuccess3Status" name="password">
-      <!-- <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> 
-      <span id="inputSuccess3Status" class="sr-only">(success)</span>-->
-    </div>
-    <!-- Indicates caution should be taken with this action -->
-<input type="submit" class ="btn btn-primary" value="확인">
-  </div> 
-  
-  
-</form>
-
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+	<br>
+	<br>
+	<h1 class="content-name-htj">글 수정하기</h1>
+	 {% if request.GET.action == "edit" %}
+	<div class="center-htj" style="width:max-content-center">
+		<h3 class="sub-content-name-htj">글을 수정하기 위해 비밀번호를 입력해 주세요.</h3>
+	</div>
+	 {% endif %}
+	<h2> {% if request.GET.action == "delete" %} 글을 삭제하기 위해 비밀번호를 입력해 주세요. 삭제된 글은 복구할 수 없습니다. {% endif %} {% if request.GET.action == "show_participants" %} 모임 신청자 명단을 확인하기 위해 비밀번호를 입력해 주세요. {% endif %} </h2>
+	<br>
+	<br>
+	<!--<h2 class='chr' style="width:max-content-center">비밀번호를 입력해주세요</h2>-->
+	<div class="titlechr">
+	</div>
+	<form class="form-horizontal" action="{% url 'meetings:check_pwd'%}" method="POST">
+		 {% csrf_token %} <input type="hidden" name="action" value="{{ request.GET.action }}">
+		<input type="hidden" name="id" value="{{ request.GET.id }}">
+		<div class="input-group col-12">
+			<strong>
+			<p>
+				비밀번호 :
+			</p>
+			</strong>
+			<input type="password" class="form-control" placeholder="비밀번호를 입력해주세요." name="">
+			<div class="input-group-append">
+				<button class="btn btn-outline-secondary" type="submit">
+				확인 </button>
+			</div>
+		</div>
+	</form>
 {% endblock %}

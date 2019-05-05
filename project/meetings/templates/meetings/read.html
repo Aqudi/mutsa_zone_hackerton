@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="readall-gtj">
+<div class="container">
    <h1 class="content-name-htj">{{ meeting.title }}</h1>
     <table class="table table-striped table-htj">
         <tbody>
@@ -36,28 +36,20 @@
             <tr>
                 <div class="col-12">
                 <th>모임설명 : </th>
-                <td colspan="12" style="text-align:left">{{ meeting.description }}</td>    
+                <td colspan="12" style="text-align:left">{{ meeting.description|linebreaks }}</td>    
                 </div>
             </tr>   
         </tbody>
 </table>
-<div class="row">
+<div class="both-sides-htj">
     <div>
-        <div class="col-3">
-            <a href="{% url 'meetings:verification' %}?action=show_participants&id={{ meeting.pk }}">신청자 명단 확인</a>
-        </div>
-        <div class="col-3">
-            <a href="{% url 'meetings:join_page' meeting.id %}">모임 참여 신청하기</a>
-        </div>  
+        <a class="readbutton-gtj" href="{% url 'meetings:verification' %}?action=show_participants&id={{ meeting.pk }}">신청자 명단 확인</a>
+        <a class="readbutton-gtj" href="{% url 'meetings:join_page' meeting.id %}">모임 참여 신청하기</a>
     </div>
     <div>
-       <div class="col-">
-            <a href="{% url 'meetings:verification' %}?action=edit&id={{ meeting.pk }}">수정</a>
-        </div>
-        <div class="col-2">
-            <a href="{% url 'meetings:verification' %}?action=delete&id={{ meeting.pk }}">삭제</a>
-        </div> 
-    </div>
+        <a class="readbutton-gtj" href="{% url 'meetings:verification' %}?action=edit&id={{ meeting.pk }}">수정</a>
+        <a class="readbutton-gtj" href="{% url 'meetings:verification' %}?action=delete&id={{ meeting.pk }}">삭제</a>
+    </div> 
 </div>
 </div>
 

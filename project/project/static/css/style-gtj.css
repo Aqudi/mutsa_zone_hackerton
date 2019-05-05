@@ -79,7 +79,7 @@
     
 }
 #service-name-z-gtj{
-    color:orange;
+    color:#FF9D1B;
     margin-bottom:50px;
     font-family: inherit;
     font-weight:normal;
@@ -160,114 +160,21 @@ body{
     color:red;
 }
 
-#readall-gtj{
-
-margin-right:8%;
-margin-left:8%;
-
-}
-
-#readhead-gtj{
-    color:black;
-    
-    font-size:40px;
-    padding:0.5em;
-}
-#readtext-gtj{
-    font-size:20px;
-    display:inline-block;
-    margin-right:500px;
-    margin-block-start:30px;
-    margin-block-end:30px;
-}
-#readtext-gtj2{
-
-    font-size:20px;
-    display:inline-block;
-    margin-right:500px;
-    margin-block-start:30px;
-    margin-block-end:30px;
-}
-#readtext-gtj3{
-    font-size:20px;
-    display:inline-block;
-    margin-right:500px;
-    margin-block-start:30px;
-    margin-block-end:30px;
-}
-#readbutton-gtj1{
-    margin-left:70%;
-    display:inline-block;
-    
-}
-#readbutton-gtj2,#readbutton-gtj3,#readbutton-gtj4{
-    display:inline-block;
-}
-#readbutton-gtj1{
-    margin-left:70%;
-    padding-right:30px;
-    padding-top:3px;
-    padding-left:30px;
-    padding-bottom:3px;
+.readbutton-gtj{
+    margin-left:0;
+    padding: 0.4em 1em;
     border-color:rgba(0,0,0,0);
     border-style: solid;
     border-width:3px;
     text-decoration:none;
     color:white;
-    background-color:orange;
+    background-color:#FF9D1B;
 }
-#readbutton-gtj2{
-    margin-right:812px;
-    padding-right:30px;
-    padding-top:3px;
-    padding-left:30px;
-    padding-bottom:3px;
-    border-color:rgba(0,0,0,0);
-    border-style: solid;
-    border-width:3px;
-    text-decoration:none;
-    color:white;
-    background-color:orange;
-}
-#readbutton-gtj3{
-    padding-right:30px;
-    padding-top:3px;
-    padding-left:30px;
-    padding-bottom:3px;
-   border-color:rgba(0,0,0,0);
-    border-style: solid;
-    border-width:3px;
-    text-decoration:none;
-    color:white;
-    background-color:orange;
-}
-#readbutton-gtj4{
-    padding-right:30px;
-    padding-top:3px;
-    padding-left:30px;
-    padding-bottom:3px;
-    border-color:rgba(0,0,0,0);
-    border-style: solid;
-    border-width:3px;
-    text-decoration:none;
-    color:white;
-    background-color:orange;
-}
-#mylist-gtj{
 
-    padding-left:400px;
-}
-#mylistbutton-gtj
-{
-    float:right;
-}
 @font-face {
   font-family: OpenSans-Regular;
   src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
 }
-
-
-
 
 table {
   border-spacing: 1;
@@ -291,7 +198,7 @@ table td, table th {
 }
 table thead tr {
   height: 60px;
-  background: orange;
+  background:#FF9D1B;
 }
 table tbody tr {
   height: 50px;
@@ -377,20 +284,36 @@ tbody tr:hover {
   }
 }
 
-
+.center-htj{
+  width:100%;
+  text-align:center;
+}
 .chr{
     display:inline-block;
-    
-    
+  font-family: 'Jua', sans-serif;
 }
 #chr-center-gtj{
-    
     margin: 0 auto;
-    text-align:center;
-}
-#form-group{
     text-align:left;
+    font-family: 'Jua', sans-serif;
+    margin-bottom:20px;
+}
+#content-name-htj{
+    background-color:#FF9D1B;
+    display:inline-block;
 }
 
+.both-sides-htj{
+    display:flex;
+    justify-content: space-between;
+}
 
+.both-sides-htj a{    
+    margin:1em 1em;
+}
 
+.has-success .form-control {
+    border-color: #000000;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}

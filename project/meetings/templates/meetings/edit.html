@@ -24,11 +24,12 @@
 <body>
     <br><br>
 	<body style="overflow-x:hidden">
-<form class="form-horizontal">
+<form class="form-horizontal" action="{% url 'meetings:update' meeting.pk %}" method="POST">
+	{% csrf_token %}
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">모임구분</label>
 		<div class="col-xs-2">
-				<select class="form-control">
+				<select class="form-control" name="category">
 				    {% ifequal meeting.category '스터디' %}
 				        <option value ="스터디" selected="selected">스터디</option>
 				        <option value = "강의">강의</option>
@@ -66,7 +67,7 @@
 		<div class="form-group">
 		   <label for="inputEmail3" class="col-sm-2 control-label">글제목</label>
 		   <div class="col-xs-3">
-		     <input type="name" class="form-control" id="inputEmail3" value ="{{ meeting.title }}">
+		     <input type="name" class="form-control" id="inputEmail3" value ="{{ meeting.title }}" name="title">
 		   </div>
     </div>
 
@@ -74,35 +75,35 @@
 		<div class="form-group">
 	    <label for="inputEmail3" class="col-sm-2 control-label">시간</label>
 	    <div class="col-xs-2">
-	      <input type="datetime" class="form-control" id="inputEmail3" value ="{{ meeting.meeting_time}}">
+	      <input type="datetime" class="form-control" id="inputEmail3" value ="{{ meeting.meeting_time}}" name="meeting_time">
 	    </div>
 	  </div>
 
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">장소</label>
 			<div class="col-xs-2">
-				<input type="place" class="form-control" id="inputEmail3" value ="{{ meeting.meeting_place}}">
+				<input type="place" class="form-control" id="inputEmail3" value ="{{ meeting.meeting_place}}" name="meeting_place">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">최소인원</label>
 			<div class="col-xs-1">
-				<input type="number" class="form-control" id="inputEmail3" value = "{{ meeting.min_number }}">
+				<input type="number" class="form-control" id="inputEmail3" value = "{{ meeting.min_number }}" name="min_number">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">최대인원</label>
 			<div class="col-xs-1">
-				<input type="number" class="form-control" id="inputEmail3" value = "{{ meeting.max_number }}">
+				<input type="number" class="form-control" id="inputEmail3" value = "{{ meeting.max_number }}" name="max_number">
 			</div>
 		</div>
 
 			<div class="form-group">
 		    <label for="inputEmail3" class="col-sm-2 control-label">모임설명</label>
 		    <div class="col-xs-5">
-					<textarea class="form-control" rows="6" value = "{{ meeting.description }}"></textarea>
+					<textarea class="form-control" rows="6" name="description">{{ meeting.description }}</textarea>
 		    </div>
 		  </div>
 
@@ -117,14 +118,14 @@
 	<div class="form-group">
 		<label for="inputEmail3" class="col-sm-2 control-label">개설자 이름</label>
 		<div class="col-xs-1">
-			<input type="datetime" class="form-control" id="inputEmail3" value = "{{ meeting.writer }}">
+			<input type="datetime" class="form-control" id="inputEmail3" value = "{{ meeting.writer }}" name="writer">
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label for="inputEmail3" class="col-sm-2 control-label">이메일</label>
 		<div class="col-xs-2">
-			<input type="datetime" class="form-control" id="inputEmail3" value = "{{ meeting.writer_email }}">
+			<input type="datetime" class="form-control" id="inputEmail3" value = "{{ meeting.writer_email }}" name="writer_email">
 		</div>
 	</div>
 
