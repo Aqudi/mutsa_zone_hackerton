@@ -18,7 +18,7 @@ def create(request):
         
         meeting = Meeting(category = category, title = title, writer = writer, min_number = min_number, max_number = max_number, meeting_time = meeting_time, meeting_place = meeting_place, description = description, writer_email = writer_email, password=password)
         meeting.save()
-        return redirect('list')
+        return redirect('meetings:list')
         
     return render(request, 'meetings/create.html')
 
@@ -53,8 +53,6 @@ def join(request, id):
         participant.save()
         
         # participant.meetings.add(meeting)
-        
-        
         return redirect('meetings:list')
         
 
@@ -94,10 +92,9 @@ def update(request, id):
 
 # 모임 삭제하기
 def delete(request, id):
-    if request.method == "POST":
-        meeting = Meeting.objects.get(pk=id)
-        meeting.delete()
-        return redirect('meeting:list')
+    meeting = Meeting.objects.get(pk=id)
+    meeting.delete()
+    return redirect('meetings:list')
         
         
 # 모임 상세보기
@@ -119,7 +116,7 @@ def verification(request):
     
 # 참가자 목록
 def participants(request, id):
-    participants = get_object_or_404(Participant, pk = id)
+    participants = get_object_or_404(Participant, meeting=id)
     return render(request, 'meetings/participnats.html', {'participants':participants})
     
 
@@ -135,7 +132,7 @@ def search(request):
     search = request.GET.get('search')
     search_result = Meeting.objects.filter(title__contains=search)
     
-    return render(request, 'meetings/search_result.html', {'search_result': search_result})
+    return render(request, 'meetings/search_result.html', {'search_result': search_result, 'search_keyword': search})
 
 
 # 비밀번호 체크
@@ -146,6 +143,9 @@ def check_pwd(request):
     pwd = request.POST.get('password')
     
     if pwd == meeting.password:
+        if request.POST.get('action') == "show_participants":
+            return redirect('meetings:participants', id)
+            
         if request.POST.get('action') == "edit":
             return redirect('meetings:edit', id)
         

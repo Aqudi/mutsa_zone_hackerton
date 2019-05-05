@@ -26,15 +26,16 @@
 <body>
     <br><br>
 	<body style="overflow-x:hidden">
-<form class="form-horizontal">
+<form class="form-horizontal" action ="{% url 'meetings:create' %}" method = "POST">
+    {% csrf_token %}
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">모임구분</label>
 		<div class="col-xs-2">
-				<select class="form-control">
-	  <option>스터디</option>
-	  <option>강의</option>
-	  <option>번개</option>
-	  <option>그 외</option>
+				<select class="form-control" name = "category">
+	  <option value="스터디">스터디</option>
+	  <option value="강의">강의</option>
+	  <option value="번개모임">번개모임</option>
+	  <option value="그외">그외</option>
 	</select>
 		</label>
 	</div>
@@ -42,9 +43,10 @@
 
 
 		<div class="form-group">
-		   <label for="inputEmail3" class="col-sm-2 control-label">주제</label>
+		   <label for="inputEmail3" class="col-sm-2 control-label">글제목</label>
 		   <div class="col-xs-3">
-		     <input type="name" class="form-control" id="inputEmail3" placeholder="title">
+		     <input type="name" class="form-control" id="inputEmail3" 
+		     placeholder="title" name ="title">
 		   </div>
     </div>
 
@@ -52,42 +54,48 @@
 		<div class="form-group">
 	    <label for="inputEmail3" class="col-sm-2 control-label">시간</label>
 	    <div class="col-xs-2">
-	      <input type="datetime" class="form-control" id="inputEmail3" placeholder="00:00 ~ 00:00">
+	      <input type="datetime" class="form-control" id="inputEmail3" 
+	      placeholder="00:00 ~ 00:00" name ="meeting_time">
 	    </div>
 	  </div>
 
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">장소</label>
 			<div class="col-xs-2">
-				<input type="place" class="form-control" id="inputEmail3" placeholder="">
+				<input type="place" class="form-control" id="inputEmail3" 
+				placeholder="장소" name="meeting_place">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">최소인원</label>
 			<div class="col-xs-1">
-				<input type="number" class="form-control" id="inputEmail3" placeholder="">
+				<input type="number" class="form-control" id="inputEmail3" 
+				placeholder="최소인원" name="min_number">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">최대인원</label>
 			<div class="col-xs-1">
-				<input type="number" class="form-control" id="inputEmail3" placeholder="">
+				<input type="number" class="form-control" id="inputEmail3" 
+				placeholder="" name="max_number">
 			</div>
 		</div>
 
 			<div class="form-group">
 		    <label for="inputEmail3" class="col-sm-2 control-label">모임설명</label>
 		    <div class="col-xs-5">
-					<textarea class="form-control" rows="6" placeholder="explain"></textarea>
+					<textarea class="form-control" rows="6" 
+					name="description" placeholder="explain"></textarea>
 		    </div>
 		  </div>
 
 	  <div class="form-group">
 	    <label for="inputPassword3" class="col-sm-2 control-label">비밀번호 설정</label>
 	    <div class="col-xs-2">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="글 수정 및 삭제 시 필요">
+	      <input type="text" class="form-control" id="inputPassword3" 
+	      name="password" placeholder="글 수정 및 삭제 시 필요">
 	    </div>
   </div>
 
@@ -95,14 +103,16 @@
 	<div class="form-group">
 		<label for="inputEmail3" class="col-sm-2 control-label">개설자 이름</label>
 		<div class="col-xs-1">
-			<input type="datetime" class="form-control" id="inputEmail3" placeholder="name">
+			<input type="datetime" class="form-control" id="inputEmail3" 
+			name="writer" placeholder="name">
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label for="inputEmail3" class="col-sm-2 control-label">이메일</label>
 		<div class="col-xs-2">
-			<input type="datetime" class="form-control" id="inputEmail3" placeholder="@likelion.org">
+			<input type="datetime" class="form-control" id="inputEmail3" 
+			name="writer_email" placeholder="@likelion.org">
 		</div>
 	</div>
 

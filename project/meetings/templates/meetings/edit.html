@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<script
-  src="http://code.jquery.com/jquery-3.3.1.js"
+  src="http://code.jquery.pantcom/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
 
@@ -28,11 +28,35 @@
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">모임구분</label>
 		<div class="col-xs-2">
-				<select class="form-control" value="{{ meeting.category }}">
-	  <option value = "스터디">스터디</option>
-	  <option value = "강의">강의</option>
-	  <option value = "번개">번개</option>
-	  <option value = "그외">그외</option>
+				<select class="form-control">
+				    {% ifequal meeting.category '스터디' %}
+				        <option value ="스터디" selected="selected">스터디</option>
+				        <option value = "강의">강의</option>
+                    	  <option value = "번개모임">번개모임</option>
+                    	  <option value = "그외">그외</option>
+				    {% endifequal %}
+				    {% ifequal meeting.category '강의' %}
+				        <option value ="스터디">스터디</option>
+				        <option value = "강의" selected="selected">강의</option>
+                    	  <option value = "번개모임">번개모임</option>
+                    	  <option value = "그외">그외</option>
+				    {% endifequal %}
+				    {% ifequal meeting.category '번개모임' %}
+				        <option value ="스터디">스터디</option>
+				        <option value = "강의">강의</option>
+                    	  <option value = "번개모임" selected="selected">번개모임</option>
+                    	  <option value = "그외">그외</option>
+				    {% endifequal %}
+				    {% ifequal meeting.category '그외' %}
+				        <option value ="스터디">스터디</option>
+				        <option value = "강의">강의</option>
+                    	  <option value = "번개모임">번개모임</option>
+                    	  <option value = "그외" selected="selected">그외</option>
+				    {% endifequal %}
+	  <!--<option value = "스터디">스터디</option>-->
+	  <!--<option value = "강의">강의</option>-->
+	  <!--<option value = "번개">번개</option>-->
+	  <!--<option value = "그외">그외</option>-->
 	</select>
 		</label>
 	</div>
@@ -40,7 +64,7 @@
 
 
 		<div class="form-group">
-		   <label for="inputEmail3" class="col-sm-2 control-label">주제</label>
+		   <label for="inputEmail3" class="col-sm-2 control-label">글제목</label>
 		   <div class="col-xs-3">
 		     <input type="name" class="form-control" id="inputEmail3" value ="{{ meeting.title }}">
 		   </div>
