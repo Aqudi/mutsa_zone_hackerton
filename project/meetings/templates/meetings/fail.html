@@ -8,10 +8,12 @@
     
     <form action="{% url 'meetings:list' %}" method="POST">
         {% csrf_token %}
+        <div id="fail-background-gtj">
         <div class="d-flex row-container justify-content-center main-container">
             <input type="button" class="btn btn-outline-info" onclick="history.back()" value="비밀번호 다시 입력하기"> &nbsp; &nbsp;
             <!--<a href="#" class="btn btn-outline-info" onclick="GoBackWithRefresh();">비밀번호 다시 입력하기</a> &nbsp; &nbsp;-->
             <input type="submit" class="btn btn-outline-success" id="list" value="모임 목록으로 돌아가기">
+        </div>
         </div>
     </form>
 
@@ -23,7 +25,7 @@ function GoBackWithRefresh(event) {
         //location.replace(document.referrer);
     } else {
         window.history.back();
-    }
+    }a
 }
 </script>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Meeting, Participant
+from .models import Meeting, Participant, Board
 
 # Create your views here.
 # 모임 개설
@@ -165,3 +165,13 @@ def check_pwd(request):
             
     else:
         return redirect('meetings:fail')
+        
+# 개설요청 페이지
+def board(request):
+    print(request.method)
+    if request.method == "POST":
+        text = request.POST.get('text')
+        Board(text=text).save()
+        return redirect('meetings:board')
+    boards = Board.objects.all().order_by('-id')
+    return render(request, 'meetings/board.html', {'boards': boards})
