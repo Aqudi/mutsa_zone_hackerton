@@ -121,5 +121,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '프로젝트이름', 'static')
+    os.path.join(BASE_DIR, 'project', 'static')
 ]
